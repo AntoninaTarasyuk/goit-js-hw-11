@@ -22,13 +22,11 @@ export default class ImagesApiService {
     const url = `${API_URL}?${options}`;
     const response = await Axios.get(url);
     this.totalHits = response.data.totalHits;
-    this.total = response.data.total;
     return response.data.hits;
 
     // const res = await fetch(url);
     // const data = await res.json();
     // this.totalHits = data.totalHits;
-    // this.total = data.total;
     // return data.hits;
 
     // return fetch(url)

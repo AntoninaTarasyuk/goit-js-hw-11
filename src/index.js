@@ -43,10 +43,10 @@ async function onFormSubmit(e) {
 
     checkConditionsForLoadMore();
 
-    if (ImagesApi.total === 0) {
+    if (ImagesApi.totalHits === 0) {
       onNotFoundImages();
     } else {
-      onFoundImages(ImagesApi.total);
+      onFoundImages(ImagesApi.totalHits);
       renderGalleryMarkup(images);
     }
   }
@@ -108,7 +108,7 @@ async function onLoadMore() {
 // }
 
 function checkConditionsForLoadMore() {
-  if (ImagesApi.total <= ImagesApi.per_page) {
+  if (ImagesApi.totalHits <= ImagesApi.per_page) {
       loadMoreBtn.hide();
     } else {
       loadMoreBtn.show();
@@ -135,7 +135,7 @@ function onNotFoundImages() {
 }
 
 function сheckEndOfSearch() {
-  const totalPages = Math.ceil(ImagesApi.total / ImagesApi.per_page);
+  const totalPages = Math.ceil(ImagesApi.totalHits / ImagesApi.per_page);
   if (ImagesApi.page === totalPages) {
     setTimeout(() => {
       Notify.warning("We're sorry, but you've reached the end of search results.");
