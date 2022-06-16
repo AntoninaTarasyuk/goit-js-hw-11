@@ -60,8 +60,8 @@ async function onFormSubmit(e) {
 
 //   ImagesApi.query = e.currentTarget.elements.searchQuery.value.trim();
 //   if (ImagesApi.query === "") {
-//     loadMoreBtn.hide();
-//     return notFoundImagesNotification();
+//     onNotFoundImages();
+//     return;
 //   };
 
 //   loadMoreBtn.show();
